@@ -21,11 +21,12 @@ public class ReverseArray2 {
         return reverseArray;
     }
 }
-/*1. Create a class named ArrayElements and write a program with the following specifications:
-        1.1 Create an array of integers with a length of 100.
-        1.2 Assign values from 1 to 100 to the indexes of the array.
-        1.3 Display the array elements in a single line separated by spaces.
-   1.4 Display the array elements in a single line in reversed order, separated by spaces.
-   1.5 Display all evenly divisible elements by 5 in a single line separated by spaces.
+/*
+8. Create a class named ReverseArray and write a program to reverse an array of integers and return it as a new one.
 
- */
+        Example:
+array = {1,2,3,4,5};
+
+Output:
+reversedArray = {5,4,3,2,1};
+        */
