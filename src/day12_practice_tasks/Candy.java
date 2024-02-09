@@ -24,27 +24,25 @@ public class Candy {
 
         this.quantity= quantity;
     }
-    public double getPrice(){
-        if (price < 0){
+    public double getPrice() {
+        if (price < 0) {
             System.err.println("Unit Price can not be negative");
             System.exit(1);//terminates the entire program
         }
+return price;
 
-        return price;
     }
     public void setPrice(double price){
         if (price < 0){
             System.err.println("Unit Price can not be negative");
             System.exit(1);//terminates the entire program
         }
-        if (price ==0){
 
-
-        }
 
         this.price= price;
 
     }
+
     public boolean getHasPeanuts(){
 
         return hasPeanuts;
