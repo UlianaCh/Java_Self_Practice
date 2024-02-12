@@ -1,13 +1,13 @@
 package day11_practice_tasks;
 
 public class Employee {
-    String name;
-    int age;
-    char gender;
-    String jobTitle;
-    double salary;
+    public String name;
+    public int age;
+    public char gender;
+    public String jobTitle;
+    public double salary;
 
-    public Employee() {
+    public Employee(String name, int age, char gender, String jobTitle, double salary) {
         this.name = name;
         this.age = age;
         this.gender = gender;

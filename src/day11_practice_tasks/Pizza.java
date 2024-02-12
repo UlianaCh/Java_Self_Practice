@@ -1,10 +1,14 @@
 package day11_practice_tasks;
 
 public class Pizza {
-    String size;
-    int numberOfCheeseTopping;
-    int numberOfPepperoniTopping;
-    public int calcCost(){
+    public String size;
+   public int numberOfCheeseTopping, numberOfPepperoniTopping;
+    public Pizza(String size, int numberOfCheeseTopping, int numberOfPepperoniTopping) {
+        this.size = size;
+        this.numberOfCheeseTopping = numberOfCheeseTopping;
+        this.numberOfPepperoniTopping = numberOfPepperoniTopping;
+    }
+    public double calcCost(){
         if(size.equalsIgnoreCase("small")){
             int totalCost = 10+(2*numberOfPepperoniTopping)+(2*numberOfCheeseTopping);
             return totalCost;
@@ -20,7 +24,13 @@ public class Pizza {
 
         return 0;
     }
-
+/*
+ public double calcCost(){
+        double statingPrice = (size.equalsIgnoreCase("small")) ? 10 :(size.equalsIgnoreCase("medium"))? 12 : 14;
+        double totalPrice = statingPrice + 2 * (numberOfCheeseTopping+numberOfPepperoniTopping);
+        return totalPrice;
+    }
+ */
     @Override
     public String toString() {
         return "Pizza{" +

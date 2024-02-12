@@ -1,12 +1,12 @@
 package day11_practice_tasks;
 
 public class CydeoStudent {
-    String name;
-    int age;
-    int id;
-    char grade;
-    String batchNumber;
-    int groupNumber;
+    public String name;
+   public int age;
+    public int id;
+   public char grade;
+   public String batchNumber;
+    public int groupNumber;
    public static String schoolName;
     public static String programmingLanguage;
 
@@ -24,10 +24,10 @@ public class CydeoStudent {
     public void attendClass(){
         System.out.println(name+" is attending the live class.");
     }
-    public void printSchoolName(){
+    public static void printSchoolName(){
         System.out.println(schoolName);
     }
-    public void printProgLanguage(){
+    public static void printProgLanguage(){
         System.out.println(programmingLanguage);
     }
 

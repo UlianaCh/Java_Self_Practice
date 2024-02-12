@@ -5,6 +5,16 @@ public class Carpet {
     double length;
     double unitPrice;
     boolean isPersian;
+    /*public double width, length, unitPrice;
+    public boolean isPersian;
+
+    public Carpet(double width, double length, double unitPrice, boolean isPersian) {
+        this.width = width;
+        this.length = length;
+        this.unitPrice = unitPrice;
+        this.isPersian = isPersian;
+
+     */
 
     @Override
     public String toString() {
@@ -27,6 +37,17 @@ public class Carpet {
         }
 
     }
+    /*
+    public double calcCost(){
+        double totalPrice = (width*length)*unitPrice;
+
+        if(isPersian){
+            totalPrice += 200;
+        }
+
+        return totalPrice;
+    }
+     */
 
 
 }
