@@ -3,23 +3,27 @@ package day12_practice_tasks;
 public class Circle {
     private double radius;
     public static final double PI =3.14;
+    public Circle(double radius) {
+        setRadius(radius);
+    }
    public double getRadius(){
-        if (radius <= 0) {
-            System.err.println("Radius can not be zero or negative");
-            System.exit(1);//terminates the entire program
-        }
         return radius;
-
     }
     public void setRadius(double radius){
+        if (radius <= 0) {
+            System.err.println("Radius must be a positive value.");
+            System.exit(1);
+        }
 
         this.radius= radius;
     }
     public double calcArea(){
         return radius*radius*PI;
+        //return Math.PI * radius * radius;
     }
     public double calcPerimeter(){
         return 2*radius*PI;
+        //return 2 * Math.PI * radius;(don't need to name final PI?)
     }
 
     @Override

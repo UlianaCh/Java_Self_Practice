@@ -5,6 +5,12 @@ public class Candy {
     private int quantity;
     private double price;
     private boolean hasPeanuts;
+    public Candy(String brand, int quantity, double price, boolean hasPeanuts) {
+        setBrand(brand);
+        setQuantity(quantity);
+        setPrice(price);
+        this.hasPeanuts = hasPeanuts;
+    }
     public String getBrand(){
 
         return brand;
@@ -14,21 +20,17 @@ public class Candy {
         this.brand= brand;
     }
     public int getQuantity(){
-        if (quantity < 0){
-            System.err.println("Quantity can not be negative");
-            System.exit(1);//terminates the entire program
-        }
         return quantity;
     }
     public void setQuantity(int quantity){
+        if (quantity <= 0) {
+            System.err.println("Quantity must be a positive value.");
+            System.exit(1);
+        }
 
         this.quantity= quantity;
     }
     public double getPrice() {
-        if (price < 0) {
-            System.err.println("Unit Price can not be negative");
-            System.exit(1);//terminates the entire program
-        }
 return price;
 
     }
@@ -57,7 +59,7 @@ return price;
         return "Candy{" +
                 "brand='" + brand + '\'' +
                 ", quantity=" + quantity +
-                ", price=" + price +
+                ", price=" + ((price == 0) ? "free":price) +
                 ", hasPeanuts=" + hasPeanuts +
                 '}';
     }

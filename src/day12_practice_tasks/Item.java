@@ -3,77 +3,63 @@ package day12_practice_tasks;
 public class Item {
     private String name;
     private double unitPrice;
-    private double quantity;
-    public String getName(){
-
-        if (name == null){
-            System.err.println("Name cant contain special chars or digits");
-            System.exit(1);//terminates the entire program
+    private int quantity;
+    public Item(String name, double unitPrice, int quantity) {
+        setName(name);
+        setUnitPrice(unitPrice);
+        setQuantity(quantity);}
+        public String getName () {
+            return name;
         }
-        return name;
-    }
-    public void setName(String name){
-        if(name==null|| name.isEmpty()||name.isBlank()){
-            System.err.println("Name can't be empty or blank");
-            System.exit(1);}
-        boolean isSpecialChar;
-        boolean isFirstLetter;
-        for (int i = 0; i < name.toCharArray().length; i++) {
-            if (isSpecialChar = !Character.isLetterOrDigit(name.charAt(i))) {
-                System.err.println("The name cannot contain any special characters other than space.");
-                System.exit(1);
-            } else if (isSpecialChar = !Character.isLetter(name.charAt(0))) {
-                System.err.println("The name must start with letters.");
+
+        public void setName (String name){
+            if (name == null || name.trim().isEmpty()) {
+                System.err.println("Name can't be empty or blank");
                 System.exit(1);
             }
+            if (!name.matches("^[a-zA-Z\\s]+$")) {
+                System.err.println("Name must contain only letters and spaces.");
+                System.exit(1);
+            }
+
+            this.name = name;
+        }
+        public double getUnitPrice () {
+            return unitPrice;
+        }
+        public void setUnitPrice ( double unitPrice){
+            if (unitPrice < 0) {
+                System.err.println("Unit Price can not be negative");
+                System.exit(1);//terminates the entire program
+            }
+
+            this.unitPrice = unitPrice;
+        }
+        public int getQuantity () {
+            return quantity;
+        }
+        public void setQuantity ( int quantity){
+            if (quantity < 0) {
+                System.err.println("Quantity can not be negative");
+                System.exit(1);//terminates the entire program
+            }
+
+            this.quantity = quantity;
+        }
+        public double calcCost () {
+            return unitPrice * quantity;
         }
 
-        this.name= name;
-    }
-    public double getUnitPrice(){
-        if (unitPrice < 0){
-            System.err.println("Unit Price can not be negative");
-            System.exit(1);//terminates the entire program
+        @Override
+        public String toString () {
+            return "Item{" +
+                    "name='" + name + '\'' +
+                    ", unitPrice=" + unitPrice +
+                    ", quantity=" + quantity +
+                    ", cost=" + calcCost() +
+                    '}';
         }
-        return unitPrice;
     }
-    public void setUnitPrice(double unitPrice){
-        if (unitPrice < 0){
-            System.err.println("Unit Price can not be negative");
-            System.exit(1);//terminates the entire program
-        }
-
-        this.unitPrice= unitPrice;
-    }
-    public double getQuantity(){
-        if (quantity <0){
-            System.err.println("Quantity can not be negative");
-            System.exit(1);//terminates the entire program
-        }
-        return quantity;
-    }
-    public void setQuantity(double quantity){
-        if (quantity <0){
-            System.err.println("Quantity can not be negative");
-            System.exit(1);//terminates the entire program
-        }
-
-        this.quantity= quantity;
-    }
-    public double calcCost(){
-        return unitPrice*quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "name='" + name + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", quantity=" + quantity +
-                ", cost=" + calcCost() +
-                '}';
-    }
-}
 /*
 3. Create a custom class named Item with the following specifications:
 
