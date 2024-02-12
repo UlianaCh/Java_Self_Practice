@@ -13,9 +13,10 @@ public class State {
     }
 
     public void setName(String name) {
-        if(name==null|| name.isEmpty()||name.isBlank()){
-            System.err.println("Name can't be empty");
-            System.exit(1);}
+        if (name == null || name.trim().isEmpty()) {
+            System.err.println("Name cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.name = name;
     }
 
@@ -24,9 +25,10 @@ public class State {
     }
 
     public void setAbbreviation(String abbreviation) {
-        if(abbreviation==null|| abbreviation.isEmpty()||abbreviation.isBlank()){
-            System.err.println("abbreviation can't be empty");
-            System.exit(1);}
+        if (abbreviation == null || abbreviation.trim().isEmpty()) {
+            System.err.println("Abbreviation cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.abbreviation = abbreviation;
     }
 
@@ -35,9 +37,10 @@ public class State {
     }
 
     public void setPoliticalParty(String politicalParty) {
-        if(politicalParty==null|| politicalParty.isEmpty()||politicalParty.isBlank()){
-            System.err.println("politicalParty can't be empty");
-            System.exit(1);}
+        if (politicalParty == null || politicalParty.trim().isEmpty()) {
+            System.err.println("Political party cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.politicalParty = politicalParty;
     }
 
@@ -46,9 +49,10 @@ public class State {
     }
 
     public void setGovernor(String governor) {
-        if(governor==null|| governor.isEmpty()||governor.isBlank()){
-            System.err.println("governor can't be empty");
-            System.exit(1);}
+        if (governor == null || governor.trim().isEmpty()) {
+            System.err.println("Governor cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.governor= governor;
     }
 
@@ -57,6 +61,10 @@ public class State {
     }
 
     public void setSenator(String senator) {
+        if (senator == null || senator.trim().isEmpty()) {
+            System.err.println("Senator cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.senator = senator;
     }
 
