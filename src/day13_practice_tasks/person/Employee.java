@@ -7,8 +7,8 @@ public class Employee extends Person {
     private double salary;
     private String companyName;
 
-    public Employee(String name, int age, String employeeId, String jobTitle, double salary, String companyName) {
-        super(name, age);
+    public Employee(String name, int age, String gender,String employeeId, String jobTitle, double salary, String companyName) {
+        super(name, age, gender);
         setEmployeeId(employeeId);
         setJobTitle(jobTitle);
         setSalary(salary);
@@ -21,6 +21,10 @@ public class Employee extends Person {
     }
 
     public void setEmployeeId(String employeeId) {
+        if (employeeId == null || employeeId.trim().isEmpty()) {
+            System.err.println("Employee ID cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.employeeId = employeeId;
     }
 
@@ -29,6 +33,10 @@ public class Employee extends Person {
     }
 
     public void setJobTitle(String jobTitle) {
+        if (jobTitle == null || jobTitle.trim().isEmpty()) {
+            System.err.println("Job title cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.jobTitle = jobTitle;
     }
 
@@ -37,6 +45,10 @@ public class Employee extends Person {
     }
 
     public void setSalary(double salary) {
+        if (salary <= 0) {
+            System.err.println("Salary must be greater than zero.");
+            System.exit(1);
+        }
         this.salary = salary;
     }
 
@@ -45,10 +57,14 @@ public class Employee extends Person {
     }
 
     public void setCompanyName(String companyName) {
+        if (companyName == null || companyName.trim().isEmpty()) {
+            System.err.println("Company name cannot be null, empty, or blank.");
+            System.exit(1);
+        }
         this.companyName = companyName;
     }
     public void work(){
-        System.out.println(jobTitle +  " " + getName());
+        System.out.println(getJobTitle() + " " + getName() + " is working.");
     }
 
     @Override
@@ -61,3 +77,21 @@ public class Employee extends Person {
                 '}';
     }
 }
+/*
+2. Create a subclass of Person named "Employee" with the following specifications:
+   Attributes:
+       - employeeId: String
+       - jobTitle: String
+       - salary: double
+       - companyName: String
+
+   Encapsulation:
+       - Same as previous tasks.
+
+   Constructor:
+       - Same as previous tasks.
+
+   Methods:
+       - work(): Displays the employee's job title and name.
+       - toString(): Returns a string representation of the Employee object.
+ */

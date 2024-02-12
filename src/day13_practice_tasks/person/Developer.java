@@ -3,8 +3,8 @@ package day13_practice_tasks.person;
 public class Developer extends Employee {
     private String programmingLanguage;
 
-    public Developer(String name, int age, String employeeId, String jobTitle, double salary, String companyName, String programmingLanguage) {
-        super(name, age, employeeId, jobTitle, salary, companyName);
+    public Developer(String name, int age, String gender,String employeeId, String jobTitle, double salary, String companyName, String programmingLanguage) {
+        super(name, age,gender, employeeId, jobTitle, salary, companyName);
         setProgrammingLanguage(programmingLanguage);
     }
 
@@ -13,6 +13,9 @@ public class Developer extends Employee {
     }
 
     public void setProgrammingLanguage(String programmingLanguage) {
+        if (programmingLanguage == null || programmingLanguage.trim().isEmpty()) {
+            throw new IllegalArgumentException("Programming language cannot be null, empty, or blank.");
+        }
         this.programmingLanguage = programmingLanguage;
     }
     public void work(){

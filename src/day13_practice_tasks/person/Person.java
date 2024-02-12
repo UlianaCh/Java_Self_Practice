@@ -4,20 +4,21 @@ package day13_practice_tasks.person;
 public class Person {
     private String name;
     private int age;
+    private String gender;
 
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public Person(String name, int age, String gender) {
+        setName(name);
+        setAge(age);
+        setGender(gender);
     }
 
     public String getName(){
-
         return name;
     }
 
     public void setName(String name){
-        if (name == null || name.isEmpty() || name.isBlank()){
-            System.err.println("Invalid input/data for the name: " + name);
+        if (name == null || name.trim().isEmpty()){
+            System.err.println("Invalid input/data for the name, can't be null, empty or blank: " + name);
             System.exit(1);
         }
         this.name = name;
@@ -35,12 +36,25 @@ public class Person {
         }
         this.age = age;
     }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        if (gender == null || gender.trim().isEmpty()) {
+            System.err.println("Gender cannot be null, empty, or blank.");
+            System.exit(1);
+        }
+        this.gender = gender;
+    }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName()+"{" +
+        return "Person{" +
                 "name='" + name + '\'' +
-                ", age=" + age;
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }
 /*
