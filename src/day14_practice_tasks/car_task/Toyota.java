@@ -3,8 +3,8 @@ package day14_practice_tasks.car_task;
 import day14_practice_tasks.car_task.Car;
 
 public class Toyota extends Car {
-    public Toyota(String make, String model, int year, double price, String color) {
-        super(make, model, year, price, color);
+    public Toyota(String model, int year, double price, String color) {
+        super("Toyota", model, year, price, color);
     }
 
     @Override

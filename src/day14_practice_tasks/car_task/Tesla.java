@@ -5,8 +5,8 @@ import day14_practice_tasks.car_task.AutoPilot;
 import day14_practice_tasks.car_task.Car;
 
 public class Tesla extends Car implements AutoPark, AutoPilot {
-    public Tesla(String make, String model, int year, double price, String color) {
-        super(make, model, year, price, color);
+    public Tesla(String model, int year, double price, String color) {
+        super("Tesla", model, year, price, color);
     }
 
     @Override
@@ -15,7 +15,7 @@ public class Tesla extends Car implements AutoPark, AutoPilot {
     }
 
     @Override
-    public void selfDrive() {
+    public void autoPilot() {
         System.out.println(getClass().getSimpleName()+" is driving by itself");
     }
 

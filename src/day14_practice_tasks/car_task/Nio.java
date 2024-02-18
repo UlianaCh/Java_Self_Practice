@@ -5,8 +5,8 @@ import day14_practice_tasks.car_task.AutoPilot;
 import day14_practice_tasks.car_task.Car;
 
 public class Nio extends Car implements AutoPilot, AutoPark {
-    public Nio(String make, String model, int year, double price, String color) {
-        super(make, model, year, price, color);
+    public Nio(String model, int year, double price, String color) {
+        super("Nio", model, year, price, color);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Nio extends Car implements AutoPilot, AutoPark {
     }
 
     @Override
-    public void selfDrive() {
+    public void autoPilot() {
         System.out.println(getClass().getSimpleName()+" is selfdriving");
     }
 }

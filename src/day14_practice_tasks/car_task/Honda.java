@@ -1,19 +1,18 @@
 package day14_practice_tasks.car_task;
 
-import day14_practice_tasks.car_task.Car;
-
-public class Honda extends Car {
-    public Honda(String make, String model, int year, double price, String color) {
-        super(make, model, year, price, color);
-    }
-
-    @Override
-    public void start() {
-        System.out.println(getClass().getSimpleName()+" is starting");
+public final class Honda extends Car {
+    public Honda(String model, int year, double price, String color) {
+        super("Honda", model, year, price, color);
     }
 
     @Override
     public void drive() {
-        System.out.println(getClass().getSimpleName()+" is driving");
+        System.out.println("Driving "+getMake()+" "+getModel()+" on the road");
     }
+
+    @Override
+    public void start() {
+        System.out.println("Twist the key to ignition to start "+getMake()+" "+getModel());
+    }
+
 }

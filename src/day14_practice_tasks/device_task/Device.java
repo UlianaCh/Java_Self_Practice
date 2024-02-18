@@ -1,30 +1,35 @@
 package day14_practice_tasks.device_task;
 
 public abstract class Device {
-   private final String brand;
-
-    private final String model;
+   private String brand, model, color, size;
      private double price;
-       private String color;
-       private final String size;
-        private boolean hasBattery;
-        private boolean hasPowerButton;
+        private static boolean hasBattery = true,
+         hasPowerButton =true;
 
-    protected Device(String brand, String model, String size) {
-        this.brand = brand;
-        this.model = model;
+    public Device(String brand, String model, String color, String size, double price) {
+        setBrand(brand);
+        setModel(model);
+        setColor(color);
+        setSize(size);
+        setPrice(price);
+    }
+
+    private void setSize(String size) {
         this.size = size;
     }
 
-    public Device(String brand, String model, double price, String color, String size, boolean hasBattery, boolean hasPowerButton) {
-        this.brand = brand;
-        this.model = model;
-        this.price = price;
-        this.color = color;
-        this.size = size;
-        this.hasBattery = hasBattery;
-        this.hasPowerButton = hasPowerButton;
+    private void setModel(String model) {
+        if ( model==null|| model.isEmpty() ){
+            throw new RuntimeException("Model can not be empty or null ");
+        }
     }
+
+    private void setBrand(String brand) {
+        if ( brand==null|| brand.isEmpty() ){
+            throw new RuntimeException("Brand can not be empty or null ");
+        }
+    }
+
 
     public String getBrand() {
         return brand;
@@ -60,21 +65,7 @@ public abstract class Device {
         return size;
     }
 
-    public boolean isHasBattery() {
-        return hasBattery;
-    }
 
-    public void setHasBattery(boolean hasBattery) {
-        this.hasBattery = hasBattery;
-    }
-
-    public boolean isHasPowerButton() {
-        return hasPowerButton;
-    }
-
-    public void setHasPowerButton(boolean hasPowerButton) {
-        this.hasPowerButton = hasPowerButton;
-    }
     public abstract void turnOn();
     public abstract void turnOff();
 
