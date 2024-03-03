@@ -5,18 +5,17 @@ import java.util.Map;
 
 public class InvertMap {
     public static void main(String[] args) {
-        Map<Integer,Character> map= new HashMap<>();
-        map.put(1,'a');
-        map.put(2,'b');
-        map.put(3,'c');
-        System.out.println(map);
-        Map<Character,Integer> newMap= new HashMap<>();
-        // step 2 for each key value value key
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "a");
+        map.put(2, "b");
+        map.put(3, "c");
 
-        for (Map.Entry<Integer, Character> intchar : map.entrySet()) {
-            newMap.put(intchar.getValue(),intchar.getKey());
+        Map<String, Integer> invertedMap = new HashMap<>();
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            invertedMap.put(entry.getValue(), entry.getKey());
         }
-        System.out.println(newMap);
+
+        System.out.println(invertedMap);
     }
 }
 /*

@@ -22,6 +22,13 @@ public class MultiplyOdds {
             }
         }
         System.out.println(map);
+//        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+//            if (entry.getValue() % 2 == 1) {
+//                entry.setValue(entry.getValue() * 2);
+//            }
+//        }
+//
+//        System.out.println(map);
     }
 }
 /*

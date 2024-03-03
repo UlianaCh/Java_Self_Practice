@@ -4,8 +4,8 @@ import java.util.*;
 
 public class CommonElements {
     public static void main(String[] args) {
-        List<Integer> list1 = new ArrayList<>(Arrays.asList(10, 8, 11, 20, 5, 0));
-        List<Integer> list2 = new ArrayList<>(Arrays.asList(30, 0, 20, 40, 50, 10, 60));
+        Set<Integer> list1 = new HashSet<>(Arrays.asList(10, 8, 11, 20, 5, 0));
+        Set<Integer> list2 = new HashSet<>(Arrays.asList(30, 0, 20, 40, 50, 10, 60));
         Set<Integer> list3 = new TreeSet<>();
         for (Integer each : list1) {
             for (Integer i : list2) {
@@ -16,12 +16,19 @@ public class CommonElements {
 
         }
         System.out.println(list3);
+
+
 //        Set<Integer> set1 = new HashSet<>(Arrays.asList(10, 8, 11, 20, 5, 0));
 //        Set<Integer> set2 = new HashSet<>(Arrays.asList(30, 0, 20, 40, 50, 10, 60));
 //
-//        Set<Integer> set3 = new HashSet<>(set1);
-//        set3.retainAll(set2);
-//
+//        Set<Integer> set3 = new TreeSet<>(set1);
+//        for (Integer each : set1) {
+//            for (Integer i : set2) {
+//                if (i== each){
+//                    set3.add(each);
+//                }
+//            }
+//            }
 //        System.out.println("Set3= " + set3);
 
     }

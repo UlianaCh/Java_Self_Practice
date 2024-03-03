@@ -1,23 +1,20 @@
 package day17_practice_tasks;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FrequencyOfCharacters {
     public static void main(String[] args) {
         String str = "bbcccaaaaa";
 
-        Map<Character,Integer> map = new LinkedHashMap<>();
+        Map<String, Integer> frequencyMap = new LinkedHashMap<>();
 
-        for (char c : str.toCharArray()) {
-            if (map.containsKey(c)){
-                map.put(c, map.get(c) + 1);
-            }else {
-                map.put(c,1);
-            }
+        for (String each : str.split("")) {
+            int frequency = Collections.frequency(Arrays.asList(str.split("")), each);
+            frequencyMap.put( each, frequency);
         }
-        System.out.println(map);
+
+        System.out.println(frequencyMap);
+
     }
 }
 /*

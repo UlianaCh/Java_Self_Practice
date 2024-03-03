@@ -7,6 +7,12 @@ public class RemoveDuplicates {
         Set<Integer> set = new TreeSet<>(Arrays.asList(20, 15, 10, 20, 30, 10, 20, 15, 0));
 
         System.out.println(set);
+//        List<Integer> list = new ArrayList<>();
+//        list.addAll(Arrays.asList(20, 15, 10, 20, 30, 10, 20, 15, 0));
+//
+//        Set<Integer> set = new TreeSet<>(list);
+//
+//        System.out.println(set);
 
         }
     }

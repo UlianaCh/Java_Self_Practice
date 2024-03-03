@@ -1,40 +1,27 @@
 package day16_practice_tasks;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 public class Anagram {
     public static void main(String[] args) {
         String str1 = "abcd";
         String str2 = "ccddabaa";
 
-        Set<Character> set1 = new HashSet<>();
-        for (char c : str1.toCharArray()) {
-            set1.add(c);
-        }
-        Set<Character> set2 = new HashSet<>();
-        for (char c : str2.toCharArray()) {
-            set2.add(c);
-        }
-        boolean result1 = set1.equals(set2);
-        System.out.println("Example1: " + result1);
+        Set<String> s1 = new TreeSet<>(Arrays.asList(str1.split("")));
+        Set<String> s2 = new TreeSet<>(Arrays.asList(str2.split("")));
+
+        boolean isAnagram = s1.equals(s2);
+
+        System.out.println("isAnagram = " + isAnagram);
         String str3 = "xyze";
         String str4 = "xyzd";
+        Set<String> s3 = new TreeSet<>(Arrays.asList(str3.split("")));
+        Set<String> s4 = new TreeSet<>(Arrays.asList(str4.split("")));
 
+        boolean isAnagram1 = s3.equals(s4);
 
-        Set<Character> set3 = new HashSet<>();
-        for(char c : str3.toCharArray()) {
-            set3.add(c);
-        }
+        System.out.println("isAnagram = " + isAnagram1);
 
-        Set<Character> set4 = new HashSet<>();
-        for(char c : str4.toCharArray()) {
-            set4.add(c);
-        }
-
-        boolean result2 = set3.equals(set4);
-        System.out.println("Example2: " + result2);
     }
 }
 /*
